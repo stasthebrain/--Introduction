@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите число M: ");
+            int m = int.Parse(Console.ReadLine());
+            Console.Write("Введите число N: ");
+            int n = int.Parse(Console.ReadLine());
+            int sum = SumNumbers(m, n);
+            Console.WriteLine("Сумма чисел от {0} до {1} равна {2}", m, n, sum);
+            Console.ReadLine();
+        }
+
+        static int SumNumbers(int m, int n)
+        {
+            if (n == m)
+            {
+                return n;
+            }
+            else
+            {
+                return n + SumNumbers(m, n - 1);
+            }
+        }
+    }
+    }
+}
